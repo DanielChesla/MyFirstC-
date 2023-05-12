@@ -12,6 +12,7 @@ public:
     std::string name;
     int age;
     std::string hair;
+    std::string eyes;
 };
 
 int main()
@@ -30,18 +31,24 @@ int main()
     Person p;
     std::cout << "Enter name: ";
     std::getline(std::cin, p.name);
-    std::cout << "Enter age: ";
+    std::cout << "Enter your age: ";
     while (!(std::cin >> p.age)) {
         std::cout << "Invalid input. Please enter a number for your age: ";
         std::cin.clear(); // Clear the error state
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Ignore the remaining input in the input buffer.
     }
-    std::cout << "Enter hair color: ";
+ 
+    std::cout << "Enter your hair color: ";
     std::cin.ignore(); // ignore the newline character left in the input stream after reading p.age
     std::getline(std::cin, p.hair);
+
+    std::cout << "Enter your eye color: ";
+    //std::cin.ignore(); // ignore the newline character left in the input stream after reading p.age
+    std::getline(std::cin, p.eyes);
+
     std::cout << "Hello " << p.name << " \n";
     std::cout << "Wow, you are " << p.age << " years old! \n";
-    std::cout << "I always liked " << p.hair << " hair \n";
+    std::cout << "I always liked the combination of " << p.hair << " hair and " << p.eyes << " eyes \n\n" ;
 
 
   do{
