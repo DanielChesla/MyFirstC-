@@ -87,7 +87,7 @@ int main()
          std::srand(std::time(nullptr)); // Seed with the current time
 
          // Generate a random integer between 1 and 10
-         random_number = std::rand() % limit + 1; // Modulus 10 to get a number between 0 and 9, then add 1 to get a number between 1 and 10
+         random_number = std::rand() % limit ; // uses the limit that was entered to set the range
 
          // Print the random number
          std::cout << "The random number is: " << random_number << "\n";
