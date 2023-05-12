@@ -4,7 +4,15 @@
 #include <iostream>
 #include <cmath>
 #include <ctime>
+#include <string>
 
+
+class Person {
+public:
+    std::string name;
+    int age;
+    std::string hair;
+};
 
 int main()
 {
@@ -12,7 +20,6 @@ int main()
     std::string myResponse = "Y";
     std::cout << "My first C++ application!\n\n\n";
     std::cout << "Adding a second line!\n\n\n";
-
     std::time_t now = std::time(nullptr);
     char timeString[26];
     struct tm localTime;
@@ -20,6 +27,20 @@ int main()
     std::strftime(timeString, sizeof(timeString), "%Y-%m-%d %H:%M:%S", &localTime);
     std::cout << "The current time is: \n" << timeString << "\n\n" ;
     
+
+    Person p;
+    std::cout << "Enter name: ";
+    std::getline(std::cin, p.name);
+    std::cout << "Enter age: ";
+    std::cin >> p.age;
+    std::cout << "Enter hair color: ";
+    std::cin.ignore(); // ignore the newline character left in the input stream after reading p.age
+    std::getline(std::cin, p.hair);
+    std::cout << "Name: " << p.name << "\n";
+    std::cout << "Age: " << p.age << "\n";
+    std::cout << "Hair color: " << p.hair << "\n";
+
+
   do{
         std::cout << "Enter a number between 1 and 9\n";
         std::cin >> number;
