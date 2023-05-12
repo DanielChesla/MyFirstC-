@@ -19,7 +19,7 @@ int main()
     std::cout << "My first C++ application! \n";
     int choice;
     Person p;
-    std::string now;
+    std::time_t now;
     do {
     
      std::cout << "What would you like to do? \n 1. Introduction \n 2. Current Time \n 3. Numbers \n";
@@ -53,7 +53,7 @@ int main()
      case 2:
 
 
-         std::time_t now = std::time(nullptr);
+         now = std::time(nullptr);
          char timeString[26];
          struct tm localTime;
          localtime_s(&localTime, &now);
@@ -62,7 +62,7 @@ int main()
          break;
 
 
-      /*
+      
      case 3:
          std::cout << "Enter a number between 1 and 9\n";
          while (!(std::cin >> number)) {
@@ -73,7 +73,7 @@ int main()
          std::cout << "You entered: " << number << "\n";
          int double_number = number * 2;
          std::cout << "Your number doubled would be " << double_number << "\n";
-         break; */
+         break; 
      }
 
      std::cout << "Would you like to try again? (Enter 'Yes' or 'No')\n";
