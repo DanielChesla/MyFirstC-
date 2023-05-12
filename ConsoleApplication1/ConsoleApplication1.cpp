@@ -1,3 +1,11 @@
+/*
+Written by Daniel Chesla
+Messing around with C++ for the first time
+5/12/2023
+*/
+
+
+
 #include <iostream>
 #include <cmath>
 #include <ctime>
