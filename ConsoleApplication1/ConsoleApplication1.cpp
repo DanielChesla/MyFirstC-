@@ -2,6 +2,9 @@
 //
 
 #include <iostream>
+#include <cmath>
+#include <ctime>
+
 
 int main()
 {
@@ -9,6 +12,13 @@ int main()
     std::string myResponse = "Y";
     std::cout << "My first C++ application!\n\n\n";
     std::cout << "Adding a second line!\n\n\n";
+
+    std::time_t now = std::time(nullptr);
+    char timeString[26];
+    struct tm localTime;
+    localtime_s(&localTime, &now);
+    std::strftime(timeString, sizeof(timeString), "%Y-%m-%d %H:%M:%S", &localTime);
+    std::cout << "The current time is: \n" << timeString << "\n\n" ;
     
   do{
         std::cout << "Enter a number between 1 and 9\n";
