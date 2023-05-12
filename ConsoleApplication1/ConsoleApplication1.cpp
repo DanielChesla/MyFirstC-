@@ -18,14 +18,13 @@ int main()
 {
     int number;
     std::string myResponse = "Y";
-    std::cout << "My first C++ application!\n\n\n";
-    std::cout << "Adding a second line!\n\n\n";
+    std::cout << "My first C++ application! \n";
     std::time_t now = std::time(nullptr);
     char timeString[26];
     struct tm localTime;
     localtime_s(&localTime, &now);
     std::strftime(timeString, sizeof(timeString), "%Y-%m-%d %H:%M:%S", &localTime);
-    std::cout << "The current time is: \n" << timeString << "\n\n" ;
+    std::cout << "The current time is: " << timeString << "\n\n" ;
     
 
     Person p;
@@ -36,9 +35,9 @@ int main()
     std::cout << "Enter hair color: ";
     std::cin.ignore(); // ignore the newline character left in the input stream after reading p.age
     std::getline(std::cin, p.hair);
-    std::cout << "Name: " << p.name << "\n";
-    std::cout << "Age: " << p.age << "\n";
-    std::cout << "Hair color: " << p.hair << "\n";
+    std::cout << "Hello " << p.name << " \n";
+    std::cout << "Wow, you are " << p.age << " years old! \n";
+    std::cout << "I always liked " << p.hair << " hair \n";
 
 
   do{
