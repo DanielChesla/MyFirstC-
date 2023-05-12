@@ -31,7 +31,11 @@ int main()
     std::cout << "Enter name: ";
     std::getline(std::cin, p.name);
     std::cout << "Enter age: ";
-    std::cin >> p.age;
+    while (!(std::cin >> p.age)) {
+        std::cout << "Invalid input. Please enter a number for your age: ";
+        std::cin.clear(); // Clear the error state
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Ignore the remaining input in the input buffer.
+    }
     std::cout << "Enter hair color: ";
     std::cin.ignore(); // ignore the newline character left in the input stream after reading p.age
     std::getline(std::cin, p.hair);
@@ -42,7 +46,11 @@ int main()
 
   do{
         std::cout << "Enter a number between 1 and 9\n";
-        std::cin >> number;
+        while (!(std::cin >> number)) {
+            std::cout << "Invalid input. Please enter a valid number: ";
+            std::cin.clear(); // Clear the error state
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Ignore the remaining input in the input buffer.
+        }
         std::cout << "You entered: " << number << "\n";
         int double_number = number * 2;
         std::cout << "Your number doubled would be " << double_number << "\n";
