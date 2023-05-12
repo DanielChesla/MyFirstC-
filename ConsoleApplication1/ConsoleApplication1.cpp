@@ -2,6 +2,8 @@
 #include <cmath>
 #include <ctime>
 #include <string>
+#include <random>
+#include <cstdlib> 
 
 
 class Person {
@@ -20,9 +22,12 @@ int main()
     int choice;
     Person p;
     std::time_t now;
+    int random_number;
+    int double_number;
+    int limit;
     do {
     
-     std::cout << "What would you like to do? \n 1. Introduction \n 2. Current Time \n 3. Numbers \n";
+     std::cout << "What would you like to do? \n 1. Introduction \n 2. Current Time \n 3. Doubler \n 4. Random Numbers \n";
      std::cin >> choice;
      std::cin.ignore(); // ignore the newline character left in the input stream after reading choice
 
@@ -71,9 +76,24 @@ int main()
              std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Ignore the remaining input in the input buffer.
          }
          std::cout << "You entered: " << number << "\n";
-         int double_number = number * 2;
+         double_number = number * 2;
          std::cout << "Your number doubled would be " << double_number << "\n";
          break; 
+
+     case 4:
+         std::cout << "Enter your upper limit: ";
+         std::cin >> limit;
+         // Initialize the random number generator
+         std::srand(std::time(nullptr)); // Seed with the current time
+
+         // Generate a random integer between 1 and 10
+         random_number = std::rand() % limit + 1; // Modulus 10 to get a number between 0 and 9, then add 1 to get a number between 1 and 10
+
+         // Print the random number
+         std::cout << "The random number is: " << random_number << "\n";
+         break;
+
+
      }
 
      std::cout << "Would you like to try again? (Enter 'Yes' or 'No')\n";
