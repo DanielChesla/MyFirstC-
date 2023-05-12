@@ -6,7 +6,7 @@
 int main()
 {
     int number;
-    char myResponse = 'Y';
+    std::string myResponse = "Y";
     std::cout << "My first C++ application!\n\n\n";
     std::cout << "Adding a second line!\n\n\n";
     
@@ -16,9 +16,9 @@ int main()
         std::cout << "You entered: " << number << "\n";
         int double_number = number * 2;
         std::cout << "Your number doubled would be " << double_number << "\n";
-        std::cout << "Would you like to try again?\n";
+        std::cout << "Would you like to try again? (Enter 'Yes' or 'No')\n";
         std::cin >> myResponse;
-    }  while(myResponse == 'Y');
+  } while (myResponse == "Y" || myResponse == "y" || myResponse == "Yes" || myResponse == "yes" || myResponse == "YES");
         
         
         
